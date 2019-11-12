@@ -10,8 +10,7 @@ const firebaseConfig = {
   appId: '1:77149483170:web:5de15cbf8d202f1eb4a7fb'
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+
 
 router();
-
-console.log('holaaa');

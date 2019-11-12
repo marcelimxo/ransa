@@ -10,6 +10,4 @@ const template = (view) => {
   root.innerHTML = view;
 };
 
-
-
 export { redirect, template };

@@ -2,6 +2,7 @@
 
 // Importamos todas las funciones que vamos a usar
 import homeController from './controllers/home.js';
+import clientsController from './controllers/clientes.js';
 import { redirect } from './utils.js';
 
 export default () => {
@@ -15,6 +16,10 @@ export default () => {
     switch (currentRoute) {
     case '/home':
       next = homeController;
+      break;
+
+    case '/clients':
+      next = clientsController;
       break;
 
     case '':
@@ -33,7 +38,6 @@ export default () => {
   // Cambiamos la vista
   window.addEventListener('hashchange', () => {
     routerSwitch();
-    console.log('controller');
   });
 
   routerSwitch();
