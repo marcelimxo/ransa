@@ -1,0 +1,22 @@
+{
+  "name": "ransa",
+  "version": "1.0.0",
+  "description": "RANSA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelimxo/ransa.git"
+  },
+  "author": "marcelim, betsy, marilia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelimxo/ransa/issues"
+  },
+  "homepage": "https://github.com/marcelimxo/ransa#readme",
+  "dependencies": {
+    "eslint": "^6.6.0"
+  }
+}

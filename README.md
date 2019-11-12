@@ -1,2 +1,1 @@
-# ransa
-talent fest
+RANSA
