@@ -5,6 +5,7 @@
     },
     "extends": "eslint:recommended",
     "globals": {
+        "firebase": "readonly",
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
