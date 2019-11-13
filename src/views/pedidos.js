@@ -12,6 +12,7 @@ const createTemplateCard = (list, container) => {
   list.forEach(ourData => {
 
     const pedidosDiv = document.createElement('div');
+
    
     pedidosDiv.innerHTML = `<div  class="">
     <div>EMPRESA : ${ourData.cliente}</div>
@@ -20,19 +21,24 @@ const createTemplateCard = (list, container) => {
                       <tr class="color-table">
                       <th scope="col">CODIGO BATUTA</th>
                       <th scope="col">CÒDIGO OPERADOR MILLA</th>
-                      <th scope="col">FECHA DE PEDIDO</th>
+                      <th scope="col">FECHA DE CREACIÓN DE  PEDIDO</th>
                       <th scope="col">PTO ORIGEN</th>
                       <th scope="col">PTO DESTINO</th>
-                      <th scope="col">PTO ORIGEN</th>
-                      <th scope="col">PTO ORIGEN</th>
+                      <th scope="col">DISTANCIA</th>
+                      <th scope="col">FECHA DE ENTREGA </th>
+                      <th scope="col">TIPO DE PEDIDO</th>
+                      <th scope="col">STATUS</th>
                     </tr>
                       </thead>
                       <tbody>
                         <tr>
+                         <td >${ourData.codigo}</td>
                           <td >${ourData.operator}</td>
                           <td>${ourData.date_created.toDate()}</td>
+                          <td >${ourData.codigo}</td>
+                          <td ></td>
+                          <td>${ourData.total_km}</td>
                           <td>${ourData.delivery_type}</td>
-                          <td>${ourData.total}</td>
                           <td>${ourData.status}</td>
                         </tr>
                         </tbody>
@@ -61,7 +67,7 @@ const createTemplateCard = (list, container) => {
 };
 
 // Template del Home page
-export default (clients) => {
+export default  (clients) => {
   
   const all =  createTemplateCard(clients, pedidosContainer);
 
@@ -73,9 +79,3 @@ export default (clients) => {
 
   template(div);
 };
-
-
-
-
-
-
