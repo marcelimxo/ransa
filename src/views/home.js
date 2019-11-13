@@ -9,7 +9,7 @@ const showHome = () => {
   <div class="carousel-inner">
     <div class="carousel-item active">
     <img class="d-block w-100" src="https://www.ransa.biz/wp-content/uploads/2019/08/2.jpg" alt="First slide">
-    Y ahora resolvemos el tramo de la última milla en la distribución.
+    <div>Y ahora resolvemos el tramo de la última milla en la distribución.</div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://www.ransa.biz/wp-content/uploads/2019/08/16.jpg" alt="Second slide">

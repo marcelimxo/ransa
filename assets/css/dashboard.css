@@ -77,6 +77,9 @@ body {
 .color-header{
   background-color: #009a3f!important;
 }
+.color-text{
+  color:white!important;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -3878,14 +3881,14 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #868e96;
+  color: #ebeef4;
   background-color: transparent;
   border-color: transparent;
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color:#f8f9fa;
   background-color: transparent;
   border-color: #dee2e6 #dee2e6 transparent;
 }

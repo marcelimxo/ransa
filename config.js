@@ -1,5 +1,6 @@
 import router from './src/router.js';
 
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBs3zGwOqw1iWIBQ3Pr3Z2ganZL-ENCHbQ',
   authDomain: 'ransa-a4280.firebaseapp.com',
@@ -13,3 +14,4 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 
 router();
+

@@ -20,42 +20,39 @@ const getOrders = () => {
   });
 };
 
-const insertOrder = ()=>{
-  return firebase.firestore().collection('Orders').doc('BAT000002').set({
-    name: 'Los Angeles',
-    state: 'CA',
-    country: 'USA'
-  })
-    .then(function() {
-      console.log('Document successfully written!');
-    })
-    .catch(function(error) {
-      console.error('Error writing document: ', error);
-    });
-};
-
 const batchInsert = ()=>{
-  // Set the value of 'NYC'
+
+  // Get a new write batch
+  const batch = firebase.firestore().batch();
+
+  // Primero creamos la referencia al documento
   const ref01 = firebase.firestore().collection('Orders').doc('BAT000001');
-
-  console.log('ref01 :', ref01);
-
-  firebase.firestore().collection('Orders').batch().set(ref01, {
+  // Despues, seteamos cada referencia
+  batch.set(ref01, {
     asignacion: {automatico: true},
     client: 'Claro',
-    date_created: firebase.firestore.FieldValue.serverTimestamp().now(),
+    date_created: Date.now(),
     total_km: 8,
     status: 'buscando',
     delivery_type: 'express',
     car_type: 3,
   });
-
+  const ref02 = firebase.firestore().collection('Orders').doc('BAT000002');
+  batch.set(ref02,{
+    asignacion: {automatico: true},
+    cliente: 'Claro',
+    date_created: Date.now(),
+    total_km: 8,
+    status: 'buscando',
+    delivery_type: 'express',
+    car_type: 3,
+  });
   // Commit the batch
-  firebase.firestore().collection('Orders').batch().commit().then(function () {
+  batch.commit().then(function () {
     console.log('entro mucha data');
   });
 };
 
 
 
-export  {Order, getOrders, insertOrder, batchInsert};
+export  {Order, getOrders, batchInsert};

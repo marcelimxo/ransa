@@ -11,7 +11,6 @@ export default () => {
   // Creamos nuestro router
 
   const routerSwitch = () => {
-    console.log('jfiodsjfiodsfjois');
 
     // Obtenemos la dirección de la página actual
     const { hash, href } = window.location;
@@ -49,7 +48,7 @@ export default () => {
   };
 
   window.onload = () => routerSwitch();
-
+  
   // Cambiamos la vista
   window.addEventListener('hashchange', () => {
     routerSwitch();
