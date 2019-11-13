@@ -1,6 +1,5 @@
 // Importamos las funciones que vamos a usar
 import { template } from '../utils.js';
-import operadores from '../controllers/operadores.js';
 
 const operadoresContainer = document.createElement('section');
 

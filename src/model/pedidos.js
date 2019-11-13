@@ -24,40 +24,7 @@ const batchInsert = ()=>{
   // Get a new write batch
   const batch = firebase.firestore().batch();
 
-  // Primero creamos la referencia al documento
-  const ref01 = firebase.firestore().collection('Orders').doc('BAT000001');
-  // Despues, seteamos cada referencia
-  batch.set(ref01, {
-    codigo: 'BAT000001',
-    asignacion: {automatico: true},
-    cliente: 'Claro',
-    date_created: new Date(2019, 10, 14, 11, 15, 11),
-    date_programm: new Date(2019, 10, 14, 11, 25, 12),
-    total_km: 8,
-    status: 'buscando',
-    delivery_type: 'express',
-    car_type: 3,
-    operator:'Urbaner',
-    destino:{
-      coordenadas:{
-        longitud: new firebase.firestore.GeoPoint(3,4)
-      },
-      correo:'persona@gmail.com',
-      direccion:'Av.Angamos 1390, Surquillo,Peru',
-      persona_contactos: 'Carlos Paredes Torres',
-      telefono: 995456193,
-    },
-    origen:{
-      coordenadas:{
-        longitud: new firebase.firestore.GeoPoint(1,2) 
-      },
-      correo:'ventas01@claro.com.pe',
-      direccion:'Av.Argentina 3096, Callao,Peru',
-      personal_contactos:'CAC Minka',
-      telefono:995456194
-    },
-  },
-  );
+
 
   const ref02 = firebase.firestore().collection('Orders').doc('BAT000002');
   batch.set(ref02,{

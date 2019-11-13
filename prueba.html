@@ -2,7 +2,7 @@
 
   <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Horarios de Entregas</h3>
+        <h3 class="card-title">Pedido de ${ourData.cliente}  - ${ourData.codigo} </h3>
       </div>
   
       <div class="table-responsive">
@@ -16,58 +16,37 @@
             >
               <thead>
                 <tr role="row">
-                  <th
-                    class="sorting"
-                    tabindex="0"
-                    aria-controls="DataTables_Table_0"
-                    rowspan="1"
-                    colspan="1"
-                  >
-                    Días
-                  </th>
-                  <th
-                    class="sorting"
-                    tabindex="0"
-                    aria-controls="DataTables_Table_0"
-                    rowspan="1"
-                    colspan="1"
-                  >
-                    Hora de inicio
-                  </th>
-                  <th
-                    class="sorting"
-                    tabindex="0"
-                    aria-controls="DataTables_Table_0"
-                    rowspan="1"
-                    colspan="1"
-                  >
-                    Hora de cierre
-                  </th>
+                  
+                    <th class="sorting"  >CODIGO BATUTA</th>
+                    <th class="sorting"  >CÒDIGO OPERADOR MILLA</th>
+                    <th class="sorting"  >FECHA DE CREACIÓN DE  PEDIDO</th>
+                    <th class="sorting"  >PTO ORIGEN</th>
+                    <th class="sorting"  >PTO DESTINO</th>
+                    <th class="sorting"  >DISTANCIA</th>
+                    <th class="sorting"  >TIPO DE PEDIDO</th>
+                    <th class="sorting"  >STATUS</th>
                 </tr>
+                
               </thead>
               <tbody>
                 <tr role="row" class="odd">
-                  <td class="sorting_1">
-                    a
-                  </td>
-                  <td class="sorting_1">
-                      a
+                    <td >${ourData.codigo}</td>
+                    <td >${ourData.operator}</td>
+                    <td>${ourData.date_created.toDate()}</td>
+                    <td >${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.direccion} 
+                     Personal de contacto : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.personal_contactos}
+                     Teléfono : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.telefono}
+                     Correo: ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.correo}</td>
+
+                    <td >${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.direccion}
+                    Personal de contacto: ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.personal_contactos}
+                    Teléfono : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.telefono}
+                    Correo : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.correo}
                     </td>
-                    <td class="sorting_1">
-                    a
-                  </td>
+                    <td>${ourData.total_km}Km</td>
+                    <td>${ourData.delivery_type}</td>
+                    <td  class="color-status">${ourData.status}</td>
                 </tr>
-                <tr role="row" class="even">
-                <td class="sorting_1">
-                a
-              </td>
-              <td class="sorting_1">
-                  a
-                </td>
-                <td class="sorting_1">
-                a
-              </td>
-                  </tr>
               </tbody>
             </table>
           </div>
