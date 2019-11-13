@@ -61,7 +61,7 @@ const createTemplateCard = (list, container) => {
 };
 
 // Template del Home page
-export default  (clients) => {
+export default (clients) => {
   
   const all =  createTemplateCard(clients, pedidosContainer);
 

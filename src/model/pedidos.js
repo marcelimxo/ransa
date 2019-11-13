@@ -28,9 +28,11 @@ const batchInsert = ()=>{
   const ref01 = firebase.firestore().collection('Orders').doc('BAT000001');
   // Despues, seteamos cada referencia
   batch.set(ref01, {
+    codigo: 'BAT000001',
     asignacion: {automatico: true},
     cliente: 'Claro',
     date_created: new Date(2019, 10, 14, 11, 15, 11),
+    date_programm: new Date(2019, 10, 14, 11, 25, 12),
     total_km: 8,
     status: 'buscando',
     delivery_type: 'express',
@@ -59,9 +61,11 @@ const batchInsert = ()=>{
 
    const ref02 = firebase.firestore().collection('Orders').doc('BAT000002');
    batch.set(ref02,{
+    codigo: 'BAT000002',
      asignacion: {automatico: true},
      cliente: 'Claro',
      date_created: new Date(2019, 10, 14, 15, 30, 25),
+     date_programm: new Date(2019, 10, 14, 15, 45, 12),
      total_km: 10,
      status: 'buscando',
      delivery_type: 'express',
@@ -91,9 +95,11 @@ const batchInsert = ()=>{
 
    const ref03 = firebase.firestore().collection('Orders').doc('BAT000003');
    batch.set(ref03,{
+    codigo: 'BAT000003',
      asignacion: {automatico: true},
      cliente: 'Claro',
      date_created: new Date(2019, 10, 14, 10, 33, 30),
+     date_programm: new Date(2019, 10, 14, 15, 00, 12),
      total_km: 7,
      status: 'buscando',
      delivery_type: 'express',
@@ -123,9 +129,11 @@ const batchInsert = ()=>{
 
    const ref04 = firebase.firestore().collection('Orders').doc('BAT000004');
    batch.set(ref04,{
+    codigo: 'BAT000004',
      asignacion: {automatico: true},
      cliente: 'Claro',
      date_created: new Date(2019, 10, 12, 18, 20, 30),
+     date_programm: new Date(2019, 10, 12, 20, 10, 12),
      total_km: 5,
      status: 'fallido',
      delivery_type: 'express',
@@ -155,9 +163,11 @@ const batchInsert = ()=>{
 
    const ref05 = firebase.firestore().collection('Orders').doc('BAT000005');
    batch.set(ref05,{
+    codigo: 'BAT000005',
      asignacion: {automatico: true},
      cliente: 'Claro',
      date_created:  new Date(2019, 10, 11, 14, 10, 14),
+     date_programm: new Date(2019, 10, 13, 15, 10, 12),
     total_km: 5,
      status: 'fallido',
      delivery_type: 'sameday',
@@ -187,9 +197,11 @@ const batchInsert = ()=>{
 
    const ref06 = firebase.firestore().collection('Orders').doc('BAT000006');
    batch.set(ref06,{
+    codigo: 'BAT000006',
      asignacion: {manual: true},
      cliente: 'Claro',
      date_created:  new Date(2019, 10, 14, 15, 10, 39),
+     date_programm: new Date(programado),
      total_km: 6,
      status: 'buscando',
      delivery_type: 'programado',
@@ -220,8 +232,10 @@ const batchInsert = ()=>{
    const ref07 = firebase.firestore().collection('Orders').doc('BAT000007');
    batch.set(ref07,{
      asignacion: {automatico: true},
+     codigo: 'BAT000007',
      cliente: 'Claro',
      date_created:  new Date(2019, 10, 14, 15, 30, 12),
+     date_programm: new Date(2019, 10, 14, 15, 10, 12),
      total_km: 3,
      status: 'por entregar',
      delivery_type: 'express',
@@ -251,9 +265,11 @@ const batchInsert = ()=>{
   
   const ref08 = firebase.firestore().collection('Orders').doc('BAT000008');
   batch.set(ref08,{
+    codigo: 'BAT000008',
     asignacion: {automatico: true},
     cliente: 'Claro',
     date_created:  new Date(2019, 10, 15, 17, 30, 20),
+    date_programm: new Date(2019, 10, 16, 15, 10, 12),
     total_km: 3,
     status: 'por entregar',
     delivery_type: 'next day',
@@ -291,3 +307,4 @@ const batchInsert = ()=>{
 
 
 export  {Order, getOrders, batchInsert};
+    
