@@ -10,8 +10,6 @@ export default async () => {
 
   const listClients = await getClients();
 
-  console.log('hola');
-
   showClients(listClients);
 
 }; 

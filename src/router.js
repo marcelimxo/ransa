@@ -10,8 +10,13 @@ export default () => {
 
   const routerSwitch = () => {
     // Obtenemos la dirección de la página actual
-    const { hash } = window.location;
+    const { hash, href } = window.location;
     const currentRoute = hash.replace('#', '');
+
+    const currentClient = href.split('/');
+
+    const cliente = currentClient[currentClient.length-1];
+
     let next;
     switch (currentRoute) {
     case '/home':
@@ -21,6 +26,10 @@ export default () => {
     case '/clients':
       next = clientsController;
       break;
+
+    case `/clients/${cliente}`:
+      next = homeController;
+      break; 
 
     case '':
       redirect('home');
