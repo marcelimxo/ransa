@@ -5,6 +5,7 @@ import homeController from './controllers/home.js';
 import clientsController from './controllers/clientes.js';
 import operadoresController from './controllers/operadores.js';
 import clientProfileController from './controllers/perfil-cliente.js';
+import operadorProfileController from './controllers/perfil-operador.js';
 import pedidosController from './controllers/pedidos.js';
 import { redirect } from './utils.js';
 
@@ -36,6 +37,9 @@ export default () => {
 
     case `/clients/${client}`:
       next = clientProfileController(client);
+      break;
+      case `/operadores/${client}`:
+      next = operadorProfileController(client);
       break;
      
     case '/pedidos':
