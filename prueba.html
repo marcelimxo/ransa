@@ -1,55 +1,33 @@
+<div class="row row-cards">
 
-
-  <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Pedido de ${ourData.cliente}  - ${ourData.codigo} </h3>
-      </div>
-  
-      <div class="table-responsive">
-        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
-          <div class="dataTables_length" id="DataTables_Table_0_length">
-            <table
-              class="table card-table table-vcenter text-nowrap datatable dataTable no-footer"
-              id="DataTables_Table_0"
-              role="grid"
-              aria-describedby="DataTables_Table_0_info"
-            >
-              <thead>
-                <tr role="row">
-                  
-                    <th class="sorting"  >CODIGO BATUTA</th>
-                    <th class="sorting"  >CÒDIGO OPERADOR MILLA</th>
-                    <th class="sorting"  >FECHA DE CREACIÓN DE  PEDIDO</th>
-                    <th class="sorting"  >PTO ORIGEN</th>
-                    <th class="sorting"  >PTO DESTINO</th>
-                    <th class="sorting"  >DISTANCIA</th>
-                    <th class="sorting"  >TIPO DE PEDIDO</th>
-                    <th class="sorting"  >STATUS</th>
-                </tr>
-                
-              </thead>
-              <tbody>
-                <tr role="row" class="odd">
-                    <td >${ourData.codigo}</td>
-                    <td >${ourData.operator}</td>
-                    <td>${ourData.date_created.toDate()}</td>
-                    <td >${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.direccion} 
-                     Personal de contacto : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.personal_contactos}
-                     Teléfono : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.telefono}
-                     Correo: ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.correo}</td>
-
-                    <td >${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.direccion}
-                    Personal de contacto: ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.personal_contactos}
-                    Teléfono : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.telefono}
-                    Correo : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.correo}
-                    </td>
-                    <td>${ourData.total_km}Km</td>
-                    <td>${ourData.delivery_type}</td>
-                    <td  class="color-status">${ourData.status}</td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Efectividad 2019</h3>
+        </div>
+        <div class="card-body">
+            <img src="" alt="Grafico">
           </div>
+        
         </div>
       </div>
-  </div>
+
+      <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Volumen de pedidos</h3>
+            </div>
+            <div class="card-body">
+                <img src="" alt="Grafico">
+              </div>
+            
+            </div>
+          </div>
+      
+      
+    </div>
+    
+    
+    
+    
+    
