@@ -1,5 +1,4 @@
 const Order = (Claro, call) => {
-  console.log('holaaaaa');
   firebase.firestore()
     .collection('Orders')
     .where('client-name', '==', Claro)

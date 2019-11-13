@@ -64,6 +64,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block;
 }
 
+p > a {
+  color: green;
+}
+
+p > a:hover {
+  color: orange;
+}
+
 body {
   margin: 0;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -76,6 +84,9 @@ body {
 }
 .color-header{
   background-color: #009a3f!important;
+}
+.batuta{
+  font-family: 'Russo One', sans-serif;
 }
 .color-text{
   color:white!important;
@@ -173,14 +184,14 @@ sup {
 }
 
 a {
-  color: #467fcf;
+  color: white;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #295a9f;
+  color: white;
   text-decoration: underline;
 }
 
@@ -4495,6 +4506,7 @@ input[type="button"].btn-block {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
+  flex-flow: wrap;
 }
 
 .card-group > .card {
@@ -7973,6 +7985,7 @@ button.bg-dark:focus {
 .ml-auto,
 .mx-auto {
   margin-left: auto !important;
+  font-size: 20px;
 }
 
 @media (min-width: 576px) {
@@ -11631,7 +11644,7 @@ a.icon:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #9aa0ac;
+  color: white;
   margin: 0 -.75rem;
 }
 
@@ -11651,8 +11664,8 @@ a.icon:hover {
 }
 
 .nav-tabs .nav-link.active {
-  border-color: #467fcf;
-  color: #467fcf;
+  border-color: #F39200;
+  color: #F39200;
   background: transparent;
 }
 

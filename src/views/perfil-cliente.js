@@ -2,55 +2,68 @@
 import { template } from '../utils.js';
 
 // Template del Home page
-export default () => {
+export default (c) => {
   const div = document.createElement('div');
   // pegar codigo
-  const page = ` <div class="col-lg-4 col-md-6">
+  const page = `<div class="col-lg-5 col-md-6">
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Client card</h3>
-      <div class="card-options">
-        <button type="button" class="btn btn-option" data-toggle="tooltip" title="" data-original-title="Edit">
-          <i class="si si-pencil"></i>
-        </button>
-        
-      </div>
+      <h3 class="card-title">${c.name}</h3>
+      
     </div>
     <div class="card-body">
       <div class="media mb-5">
-        <img class="d-flex mr-5 rounded" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ec911398e%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ec911398e%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.84375%22%20y%3D%2236.65%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
+        <img class="d-flex mr-5 rounded" src="${c.url}" alt="${c.name} logo" width="50%">
         <div class="media-body">
-          <h5>Axa Global Group</h5>
-          <address class="text-muted small">
-            1290 Avenua of The Americas<br>
-            New York, NY 101040105
-          </address>
+          <h5>${c.razon_social}</h5>
+          <div class="text-muted small" >
+            <p>${c.ruc}</p>
+          </div>
         </div>
       </div>
       <div class="row">
+        <div class="col-12">
+          <div class="h6">Actividad Comercial</div>
+          <p>${c.actividad_comercial}</p>
+        </div>
+        <div class="col-12">
+            <div class="h6">Dirección</div>
+            <address>${c.direccion}</address>
+          </div>
         <div class="col-6">
-          <div class="h6">Relationship</div>
-          <p>Client</p>
+          <div class="h6">Sitio web</div>
+          <p><a>${c.pag_web}</a></p>
         </div>
         <div class="col-6">
-          <div class="h6">Business Type</div>
-          <p>Insurance Company</p>
-        </div>
-        <div class="col-6">
-          <div class="h6">Website</div>
-          <p><a href="javascript:void(0)">http://www.axa.com</a></p>
-        </div>
-        <div class="col-6">
-          <div class="h6">Office Phone</div>
-          <p>+123456789</p>
+          <div class="h6">Teléfono</div>
+          <p>${c.telefono}</p>
         </div>
       </div>
-      <div class="h6">Description</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos doloribus eum fugiat itaque laboriosam maiores nisi nostrum perspiciatis vero.</p>
+      <div class="h5">Acuerdos comerciales</div>
+      <table>
+          <tr>
+            <th colspan="2" class="h6">Velocidad</th>
+          </tr>
+          <tr>
+            <td>${c.velocidad[0].type}</td>
+            <td>${c.velocidad[0].hours_max} máx</td>
+          </tr>
+          <tr>
+              <td>${c.velocidad[1].type}</td>
+              <td>${c.velocidad[1].hours_max} máx</td>
+            </tr>
+            <tr>
+                <td>${c.velocidad[2].type}</td>
+                <td>${c.velocidad[2].hours_max} máx</td>
+              </tr>
+              <tr>
+                  <td>${c.velocidad[3].type}</td>
+                  <td>${c.velocidad[3].hours_max} máx</td>
+                </tr>
+        </table>
     </div>
   </div>
-</div>
-  `;
+</div>`;
 
   div.innerHTML = page;
 
