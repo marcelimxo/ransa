@@ -7,5 +7,7 @@ export default async (client)=>{
 
   const theClient = await singleClient(client_);
 
+  console.log(theClient);
+
   profileView(theClient);
 };
