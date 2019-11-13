@@ -4386,6 +4386,11 @@ input[type="button"].btn-block {
   padding: 1.5rem;
 }
 
+.tablas {
+  color:red;
+}
+
+
 .card-title {
   margin-bottom: 1.5rem;
 }
