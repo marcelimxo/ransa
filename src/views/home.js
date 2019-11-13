@@ -16,7 +16,7 @@ const showHome = () => {
         <h3 class="card-title">Efectividad 2019</h3>
       </div>
       <div class="card-body">
-          <img src="https://user-images.githubusercontent.com/50186958/68807815-835afb80-0636-11ea-891c-2e48262c53e8.png" alt="Grafico">
+          <img src="https://user-images.githubusercontent.com/50186958/68808759-67585980-0638-11ea-9937-21dd97c8ccdd.png" alt="Grafico">
         </div>
       
       </div>
@@ -28,8 +28,7 @@ const showHome = () => {
             <h3 class="card-title">Volumen de pedidos</h3>
           </div>
           <div class="card-body">
-              <img src="https://user-images.githubusercontent.com/50186958/68807760-658d9680-0636-11ea-8295-078836267146.png
-              " alt="Grafico">
+              <img src="https://user-images.githubusercontent.com/50186958/68808836-940c7100-0638-11ea-82e8-cf758f7ac036.png" alt="Grafico">
             </div>
           
           </div>
