@@ -4,16 +4,20 @@ import { template } from '../utils.js';
 const pedidosContainer = document.createElement('section');
 
 // Mostrar clientes
+const date = new Date('2019-06-01T00:00:00.000');
+date.toLocaleString('en-US', {
+  weekday: 'short', // "Sat"
+  month: 'long', // "June"
+  day: '2-digit', // "01"
+  year: 'numeric' // "2019"
+});
+
 const createTemplateCard = (list, container) => {
-
   container.innerHTML= '';
-
   let allPedidos =  document.createElement('div');
   list.forEach(ourData => {
-
-    const pedidosDiv = document.createElement('div');
-
-   
+    const pedidosDiv = document.createElement('div'); a
+    console.log(date);
     pedidosDiv.innerHTML = `<div  class="">
     <div>EMPRESA : ${ourData.cliente}</div>
     <table class="table card-table table-striped table-vcenter">
@@ -25,7 +29,6 @@ const createTemplateCard = (list, container) => {
                       <th scope="col">PTO ORIGEN</th>
                       <th scope="col">PTO DESTINO</th>
                       <th scope="col">DISTANCIA</th>
-                      <th scope="col">FECHA DE ENTREGA </th>
                       <th scope="col">TIPO DE PEDIDO</th>
                       <th scope="col">STATUS</th>
                     </tr>
@@ -35,11 +38,19 @@ const createTemplateCard = (list, container) => {
                          <td >${ourData.codigo}</td>
                           <td >${ourData.operator}</td>
                           <td>${ourData.date_created.toDate()}</td>
-                          <td >${ourData.codigo}</td>
-                          <td ></td>
-                          <td>${ourData.total_km}</td>
+                          <td >${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.direccion} 
+                           Personal de contacto : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.personal_contactos}
+                           Teléfono : ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.telefono}
+                           Correo: ${ourData.destinos && ourData.destinos.origen && ourData.destinos.origen.correo}</td>
+
+                          <td >${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.direccion}
+                          Personal de contacto: ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.personal_contactos}
+                          Teléfono : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.telefono}
+                          Correo : ${ourData.destinos && ourData.destinos.destino && ourData.destinos.destino.correo}
+                          </td>
+                          <td>${ourData.total_km}Km</td>
                           <td>${ourData.delivery_type}</td>
-                          <td>${ourData.status}</td>
+                          <td  class="color-status">${ourData.status}</td>
                         </tr>
                         </tbody>
                         </thead>
