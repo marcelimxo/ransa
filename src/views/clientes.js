@@ -6,16 +6,12 @@ const clientsContainer = document.createElement('section');
 // Mostrar clientes
 const createTemplateCard = (list, container) => {
 
-  let allCards = '';
+  container.innerHTML= '';
+
+  let allCards =  document.createElement('div');
   list.forEach(ourData => {
 
     const cardDiv = document.createElement('div');
-
-    cardDiv.classList.add('col-sm-6');
-
-    cardDiv.classList.add('col-lg-4');
-    
-    cardDiv.setAttribute('id', `${ourData.name}`);
    
     cardDiv.innerHTML = `<div class="card p-3">
     <a href="javascript:void(0)" class="mb-3">
@@ -31,11 +27,22 @@ const createTemplateCard = (list, container) => {
     </div>
   </div>`;
 
-    allCards += cardDiv; 
-    
-  }); 
+    cardDiv.classList.add('col-sm-6');
+    cardDiv.classList.add('col-lg-4');
+    cardDiv.setAttribute('id', `${ourData.name}`);
 
-  return container.appendChild = allCards;
+    allCards.appendChild(cardDiv);
+
+    allCards.querySelector(`#${ourData.name}`).addEventListener('click', (e)=>{
+
+      const client = e.currentTarget.id;
+      window.location.hash = (`${window.location.hash}/${client.toLowerCase()}`);
+    });
+  });
+
+  container.appendChild(allCards);
+
+  return container;
 };
 
 // Template del Home page
@@ -43,6 +50,7 @@ export default  (clients) => {
   
   const all =  createTemplateCard(clients, clientsContainer);
 
+  const div = document.createElement('div');
   // pegar codigo
   const clientsPage = `<div class="my-3 my-md-5">
   <div class="container">
@@ -64,13 +72,16 @@ export default  (clients) => {
         </div>
       </div>
     </div>
-    <div class="row row-cards">
-      ${all}
+    <div id="clients-list" class="row row-cards">
     </div>
   </div>
 </div>`;
 
-  template(clientsPage);
+  div.innerHTML = clientsPage;
+
+  div.querySelector('#clients-list').appendChild(all);
+
+  template(div);
 };
 
 

@@ -7,7 +7,8 @@ const redirect = (path = '') => {
 // Añade el contenido a nuestro div principal
 const template = (view) => {
   const root = document.getElementById('root');
-  root.innerHTML = view;
+  root.innerHTML = '';
+  root.appendChild(view);
 };
 
 export { redirect, template };

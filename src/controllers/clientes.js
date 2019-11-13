@@ -1,8 +1,4 @@
 
-/* eslint-disable no-console */
-/* import { addUserPhotoToStorage } from '../models/users.js';
-import { profilePageView } from '../views/profile.js'; */
-
 import  showClients  from '../views/clientes.js';
 import {getClients} from '../model/clientes.js';
 

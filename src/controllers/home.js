@@ -1,6 +1,6 @@
 
-import { showHome } from '../views/home.js';
+import showHome from '../views/home.js';
 
-export default async () => {
+export default () => {
   showHome();
 };

@@ -74,6 +74,9 @@ body {
   text-align: left;
   background-color: #f5f7fb;
 }
+.color-header{
+  background-color: #009a3f!important;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important;

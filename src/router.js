@@ -3,19 +3,23 @@
 // Importamos todas las funciones que vamos a usar
 import homeController from './controllers/home.js';
 import clientsController from './controllers/clientes.js';
+import clientProfileController from './controllers/perfil-cliente.js';
+import pedidosController from './controllers/pedidos.js';
 import { redirect } from './utils.js';
 
 export default () => {
   // Creamos nuestro router
 
   const routerSwitch = () => {
+    console.log('jfiodsjfiodsfjois');
+
     // Obtenemos la dirección de la página actual
     const { hash, href } = window.location;
     const currentRoute = hash.replace('#', '');
 
     const currentClient = href.split('/');
 
-    const cliente = currentClient[currentClient.length-1];
+    const client = currentClient[currentClient.length - 1];
 
     let next;
     switch (currentRoute) {
@@ -27,10 +31,12 @@ export default () => {
       next = clientsController;
       break;
 
-    case `/clients/${cliente}`:
-      next = homeController;
-      break; 
-
+    case `/clients/${client}`:
+      next = clientProfileController(client);
+      break;
+    case '/pedidos':
+      next = pedidosController;
+      break;
     case '':
       redirect('home');
       return;
@@ -39,7 +45,7 @@ export default () => {
       break;
     }
 
-    next();
+    next && next();
   };
 
   window.onload = () => routerSwitch();
